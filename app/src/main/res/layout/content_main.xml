@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:background="@color/blue_navy"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/text_mark_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mark Your Dates"
+        android:textAlignment="center"
+        android:textColor="#FFF"
+        android:textSize="23sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20sp" />
+
+    <LinearLayout
+        android:background="@drawable/shape_calendar"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <CalendarView
+            android:id="@+id/calendar"
+            android:background="@drawable/shape_calendar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </CalendarView>
+
+    </LinearLayout>
+
+    <Spinner
+        android:id="@+id/spinner_choose_region"
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/style_spinner"
+        android:layout_height="40dp" />
+
+    <Button
+        android:id="@+id/button_show_stats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Check Stats"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:background="@drawable/shape_button"/>
+
+</LinearLayout>

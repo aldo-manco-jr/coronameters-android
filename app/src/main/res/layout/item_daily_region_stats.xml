@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_marginTop="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    app:cardCornerRadius="5dp"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/nome_regione"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Nome Regione"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/datetime"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Data: "
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="24dp"/>
+
+        <TextView
+            android:id="@+id/totale_casi"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4dp"
+            android:text="Totale Casi: "
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/totale_positivi"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4dp"
+            android:text="Totale Positivi: "
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/nuovi_positivi"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4dp"
+            android:text="Nuovi Positivi: "
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/deceduti"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4dp"
+            android:text="Totale Deceduti: "
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/totale_guariti"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4dp"
+            android:text="Totale Guariti: "
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tamponi"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4dp"
+            android:text="Tamponi: "
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/terapia_intensiva"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4dp"
+            android:text="Terapia Intensiva: "
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/ricoverati_con_sintomi"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Ricoverati con Sintomi: "
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="4dp"/>
+
+        <TextView
+            android:id="@+id/totale_ospedalizzati"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Totale Ospedalizzati: "
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="4dp"/>
+
+        <TextView
+            android:id="@+id/isolamento_domiciliare"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Isolamento Domiciliare: "
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="4dp"/>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
