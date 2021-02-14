@@ -17,13 +17,8 @@ import org.aldomanco.coronameters.view.OnBackPressed;
 
 public class AboutFragment extends Fragment implements OnBackPressed {
 
-    private AboutViewModel aboutViewModel;
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        aboutViewModel =
-                new ViewModelProvider(this).get(AboutViewModel.class);
-
         View root = inflater.inflate(R.layout.fragment_about, container, false);
         return root;
     }
