@@ -4,7 +4,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,7 +14,7 @@ import org.aldomanco.coronameters.model.DailyRegionStats;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DailyRegionStatsAdapter extends RecyclerView.Adapter<DailyRegionStatsAdapter.DailyRegionStatsHolder> {
+public class DailyItalyStatsAdapter extends RecyclerView.Adapter<DailyItalyStatsAdapter.DailyRegionStatsHolder> {
 
     private List<DailyRegionStats> listDailyRegionStats = new ArrayList<>();
 

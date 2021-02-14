@@ -9,4 +9,10 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_navigation">MainActivity</string>
+    <string name="title_italy_stats">Italy</string>
+    <string name="title_world_stats">World</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_report">Report</string>
+    <string name="title_about">Report</string>
 </resources>

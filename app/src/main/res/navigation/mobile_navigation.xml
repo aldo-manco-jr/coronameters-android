@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_italy_stats">
+
+    <fragment
+        android:id="@+id/navigation_italy_stats"
+        android:name="org.aldomanco.coronameters.view.ui.italy.ItalyStatsFragment"
+        android:label="@string/title_italy_stats"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/navigation_world_stats"
+        android:name="org.aldomanco.coronameters.view.ui.world.WorldStatsFragment"
+        android:label="@string/title_world_stats"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="org.aldomanco.coronameters.view.ui.notifications.NotificationsFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_report"
+        android:name="org.aldomanco.coronameters.view.ui.report.ReportFragment"
+        android:label="@string/title_report"
+        tools:layout="@layout/fragment_send_mail" />
+
+    <fragment
+        android:id="@+id/navigation_about"
+        android:name="org.aldomanco.coronameters.view.ui.about.AboutFragment"
+        android:label="@string/title_about"
+        tools:layout="@layout/fragment_about" />
+
+</navigation>

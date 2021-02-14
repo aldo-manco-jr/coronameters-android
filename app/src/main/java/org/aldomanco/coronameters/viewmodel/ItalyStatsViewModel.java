@@ -11,12 +11,12 @@ import org.aldomanco.coronameters.model.DailyRegionStats;
 
 import java.util.List;
 
-public class StatsViewModel extends AndroidViewModel {
+public class ItalyStatsViewModel extends AndroidViewModel {
 
     private StatsRepository statsRepository;
     private LiveData<List<DailyRegionStats>> listDailyRegionStats;
 
-    public StatsViewModel(@NonNull Application application, String nomeRegione, String datetime){
+    public ItalyStatsViewModel(@NonNull Application application, String nomeRegione, String datetime){
         super(application);
         statsRepository = new StatsRepository(application, nomeRegione, datetime);
         listDailyRegionStats = statsRepository.getListDailyRegionStats();

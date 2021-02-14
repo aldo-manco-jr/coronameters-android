@@ -1,40 +1,34 @@
-package org.aldomanco.coronameters.view;
+package org.aldomanco.coronameters.view.ui.italy;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelProviders;
-
+import android.view.LayoutInflater;
 import android.view.View;
-
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.AdapterView;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
 import org.aldomanco.coronameters.R;
-import org.aldomanco.coronameters.model.DailyRegionStats;
-import org.aldomanco.coronameters.viewmodel.StatsViewModel;
+import org.aldomanco.coronameters.view.DailyItalyStatsActivity;
+import org.aldomanco.coronameters.view.MapsActivity;
+import org.aldomanco.coronameters.view.NavigationActivity;
+import org.aldomanco.coronameters.view.OnBackPressed;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
-import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class ItalyStatsFragment extends Fragment implements OnBackPressed, View.OnClickListener {
 
     private CalendarView calendarView;
     private TextView dateChosen;
@@ -43,17 +37,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private String dateChosenString;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             ViewGroup container, Bundle savedInstanceState) {
 
-        calendarView = findViewById(R.id.calendar);
-        dateChosen = findViewById(R.id.text_mark_date);
-        spinnerChooseRegion = findViewById(R.id.spinner_choose_region);
-        buttonShowStats = findViewById(R.id.button_show_stats);
+        View root = inflater.inflate(R.layout.fragment_home, container, false);
+
+        return root;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        calendarView = view.findViewById(R.id.calendar);
+        dateChosen = view.findViewById(R.id.text_mark_date);
+        spinnerChooseRegion = view.findViewById(R.id.spinner_choose_region);
+        buttonShowStats = view.findViewById(R.id.button_show_stats);
 
         dateChosenString = returnJSONFormattedDate();
         dateChosen.setText("Date Chosen: " + returnFormattedDate());
@@ -66,26 +65,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Invia Segnalazione alla Protezione Civile", Snackbar.LENGTH_LONG)
-                        .setAction("Invia Segnalazione alla Protezione Civile", null).show();
-
-                Intent intent = new Intent(getApplicationContext(), SendMailActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        FloatingActionButton fabMaps = findViewById(R.id.fab_maps);
+        FloatingActionButton fabMaps = view.findViewById(R.id.fab_maps);
         fabMaps.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Apri Mappa", Snackbar.LENGTH_LONG)
                         .setAction("Apri Mappa", null).show();
 
-                Intent intent2 = new Intent(getApplicationContext(), MapsActivity.class);
+                Intent intent2 = new Intent(NavigationActivity.getNavigationActivity(), MapsActivity.class);
                 startActivity(intent2);
             }
         });
@@ -115,10 +102,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         };
 
         ArrayList<String> regionsArrayList = new ArrayList<>(Arrays.asList(regionsList));
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.style_text_spinner, regionsArrayList);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(NavigationActivity.getNavigationActivity(), R.layout.style_text_spinner, regionsArrayList);
         spinnerChooseRegion.setAdapter(adapter);
 
         buttonShowStats.setOnClickListener(this);
+    }
+
+    public static ItalyStatsFragment newInstance() {
+        ItalyStatsFragment fragment = new ItalyStatsFragment();
+        return fragment;
     }
 
     private String returnFormattedDate(){
@@ -126,10 +118,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Date today = new Date();
         StringBuilder stringBuilder = new StringBuilder();
 
-        if (today.getDay()<10){
-            stringBuilder.append("0" + today.getDay() + "/");
+        if (today.getDate()<10){
+            stringBuilder.append("0" + today.getDate() + "/");
         }else {
-            stringBuilder.append(today.getDay() + "/");
+            stringBuilder.append(today.getDate() + "/");
         }
 
         if (today.getMonth()<10){
@@ -155,10 +147,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             stringBuilder.append((today.getMonth()+1) + "-");
         }
 
-        if (today.getDay()<10){
-            stringBuilder.append("0" + today.getDay() + "T17:00:00");
+        if (today.getDate()<10){
+            stringBuilder.append("0" + today.getDate() + "T17:00:00");
         }else {
-            stringBuilder.append(today.getDay() + "T17:00:00");
+            stringBuilder.append(today.getDate() + "T17:00:00");
         }
 
         return stringBuilder.toString();
@@ -210,10 +202,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (view.getId() == R.id.button_show_stats) {
             //Toast.makeText(this, dateChosenString + "\n" + spinnerChooseRegion.getSelectedItem().toString(), Toast.LENGTH_LONG).show();
 
-            Intent intent = new Intent(this, DailyRegionStatsActivity.class);
+            Intent intent = new Intent(NavigationActivity.getNavigationActivity(), DailyItalyStatsActivity.class);
             intent.putExtra("nome_regione", spinnerChooseRegion.getSelectedItem().toString());
             intent.putExtra("datetime", dateChosenString);
             startActivity(intent);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+
     }
 }

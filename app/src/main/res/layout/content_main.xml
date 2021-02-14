@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:text="Mark Your Dates"
         android:textAlignment="center"
-        android:textColor="#FFF"
+        android:textColor="@color/universe_color"
         android:textSize="23sp"
         android:layout_gravity="center"
         android:layout_marginTop="20sp" />
@@ -54,6 +54,7 @@
         android:paddingRight="20dp"
         android:layout_marginTop="20dp"
         android:layout_gravity="center"
-        android:background="@drawable/shape_button"/>
+        android:background="@drawable/shape_button"
+        android:textColor="@color/blue_navy"/>
 
 </LinearLayout>

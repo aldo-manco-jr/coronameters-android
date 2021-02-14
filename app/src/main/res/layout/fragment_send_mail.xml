@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:padding="16dp"
     android:background="@color/blue_navy"
-    tools:context=".view.SendMailActivity">
+    tools:context=".view.ui.report.ReportFragment">
 
     <TextView
         android:id="@+id/title_send_mail_to"
@@ -19,35 +19,35 @@
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textStyle="bold"
-        android:textColor="@color/white" />
+        android:textColor="@color/universe_color" />
 
     <EditText
         android:id="@+id/edit_text_to"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
-        android:textColor="@color/white"
+        android:textColor="@color/universe_color"
         android:visibility="gone" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Titolo:"
-        android:textColor="@color/white"
+        android:textColor="@color/universe_color"
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <EditText
         android:id="@+id/edit_text_subject"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
+        android:textColor="@color/universe_color"
         android:inputType="textEmailSubject" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Messaggio:"
-        android:textColor="@color/white"
+        android:textColor="@color/universe_color"
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <EditText
@@ -55,7 +55,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="start|top"
-        android:textColor="@color/white"
+        android:textColor="@color/universe_color"
         android:lines="10" />
 
     <Button

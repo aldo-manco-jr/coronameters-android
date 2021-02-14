@@ -15,8 +15,6 @@ import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -27,12 +25,8 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import org.aldomanco.coronameters.R;
-import org.aldomanco.coronameters.model.DailyRegionStats;
-import org.aldomanco.coronameters.viewmodel.StatsViewModel;
-import org.aldomanco.coronameters.viewmodel.ViewModelFactory;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -169,7 +163,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.addMarker(new MarkerOptions().position(latLng).title(nameStreet).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 10));
 
-        Intent intent = new Intent(this, DailyRegionStatsActivity.class);
+        Intent intent = new Intent(this, DailyItalyStatsActivity.class);
         intent.putExtra("nome_regione", region);
         intent.putExtra("datetime", "2021-02-05T17:00:00");
         startActivity(intent);

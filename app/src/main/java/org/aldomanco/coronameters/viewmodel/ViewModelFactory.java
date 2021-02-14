@@ -16,8 +16,8 @@ public class ViewModelFactory extends ViewModelProvider.NewInstanceFactory {
 
     @Override
     public <T extends ViewModel> T create(Class<T> modelClass) {
-        if (modelClass == StatsViewModel.class) {
-            return (T) new StatsViewModel(mApplication, (String) mParams[0], (String) mParams[1]);
+        if (modelClass == ItalyStatsViewModel.class) {
+            return (T) new ItalyStatsViewModel(mApplication, (String) mParams[0], (String) mParams[1]);
         } else {
             return super.create(modelClass);
         }
